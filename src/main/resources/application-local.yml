@@ -1,0 +1,37 @@
+mybatis-plus:
+  mapper-locations: classpath*:modules/*/*Mapper.xml
+  global-config:
+    db-config:
+      field-strategy: NOT_NULL
+      id-type: auto
+      db-type: mysql
+    banner: false
+    super-mapper-class: com.trun.fun.framework.mapper.BaseMapper
+  type-enums-package: com.trun.fun.common.enums
+  type-aliases-package: com.trun.fun.modules.*.model
+
+spring:
+  resources:
+    static-locations: classpath:/static/
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: dasd346v#fkds*g124
+    url: jdbc:sqlserver://10.79.147.73:1433;databaseName=fun
+    username: admin
+
+  servlet:
+    multipart:
+      max-file-size: 100GB
+      max-request-size: 100GB
+dependencyCheck:
+#  liunx配置
+  system: SHELL
+  path: /opt/dependency-check/bin/dependency-check.sh
+  fileDirectory: /opt/fun/fileDirectory/
+  htmlDirectory: /opt/fun/htmlDirectory/
+
+#  配置
+#  system: CMD
+#  path: D:\dependency-check-6.2.2-release\dependency-check\bin\dependency-check.bat
+#  fileDirectory: D:\lib\fileDirectory\
+#  htmlDirectory: D:\lib\htmlDirectory\
